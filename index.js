@@ -78,7 +78,7 @@ async function runTask(ecs, clusterName, taskDefArn, waitForMinutes, enableECSMa
     enableECSManagedTags: enableECSManagedTags,
     tags: tags,
     volumeConfigurations: volumeConfigurations,
-    count
+    count: taskCount
   });
 
   core.debug(`Run task response ${JSON.stringify(runTaskResponse)}`)
