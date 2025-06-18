@@ -35,7 +35,7 @@ async function runTask(ecs, clusterName, taskDefArn, waitForMinutes, enableECSMa
   const capacityProviderStrategy = JSON.parse(core.getInput('run-task-capacity-provider-strategy', { required: false }) || '[]');
   const runTaskManagedEBSVolumeName = core.getInput('run-task-managed-ebs-volume-name', { required: false }) || '';
   const runTaskManagedEBSVolume = core.getInput('run-task-managed-ebs-volume', { required: false }) || '{}';
-  const taskCount = core.getInput('run-task-count', { required: false });
+  const taskCount = parseInt(core.getInput('run-task-count', { required: false })) || undefined;
 
   let awsvpcConfiguration = {}
 
